@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,
+    MatToolbar,
     AppRoutingModule,
     MatToolbarModule,
     CommonModule,
