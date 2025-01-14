@@ -1,0 +1,29 @@
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/backKounettechnologie/pom.xml" />
+        <option value="$PROJECT_DIR$/discoveryService/pom.xml" />
+        <option value="$PROJECT_DIR$/getwayService/pom.xml" />
+        <option value="$PROJECT_DIR$/coursService/pom.xml" />
+        <option value="$PROJECT_DIR$/BoutiqueService/pom.xml" />
+        <option value="$PROJECT_DIR$/ServiceClientService/pom.xml" />
+        <option value="$PROJECT_DIR$/BlogService/pom.xml" />
+        <option value="$PROJECT_DIR$/ClientService/pom.xml" />
+        <option value="$PROJECT_DIR$/ActuService/pom.xml" />
+        <option value="$PROJECT_DIR$/OffresSpecialesService/pom.xml" />
+        <option value="$PROJECT_DIR$/configservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Category/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/backKounettechnologie/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
