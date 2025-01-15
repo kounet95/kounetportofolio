@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/media")
+@RequestMapping("/actu/media")
 public class MediaController {
 
     @Autowired

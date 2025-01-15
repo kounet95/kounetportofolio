@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/events")
+@RequestMapping("/actu/events")
 public class EventController {
 
     @Autowired
