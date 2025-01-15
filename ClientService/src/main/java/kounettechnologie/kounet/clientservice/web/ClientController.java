@@ -30,7 +30,7 @@ public class ClientController {
         return ResponseEntity.ok(clientDTO);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<ClientDTO>> getAllClients() {
         List<ClientDTO> clients = clientService.getAllClients();
         return ResponseEntity.ok(clients);

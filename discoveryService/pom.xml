@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.1</version>
+        <version>3.3.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>kounettechnologie.kounet</groupId>
-    <artifactId>discoveryService</artifactId>
+    <artifactId>discoveryservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>discoveryService</name>
-    <description>discoveryService</description>
+    <name>discoveryservice</name>
+    <description>discoveryservice</description>
     <url/>
     <licenses>
         <license/>
