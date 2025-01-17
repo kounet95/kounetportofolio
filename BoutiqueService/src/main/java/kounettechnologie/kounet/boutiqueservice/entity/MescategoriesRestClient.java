@@ -1,6 +1,8 @@
 package kounettechnologie.kounet.boutiqueservice.entity;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import kounettechnologie.kounet.boutiqueservice.Model.Mescategories;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -13,7 +15,7 @@ public interface MescategoriesRestClient {
         @CircuitBreaker(name = "customerService", fallbackMethod = "getDefaultCustomer")
         Mescategories findCustomerById(@PathVariable Long id);
         @GetMapping("/categorie")
-        @CircuitBreaker(name = "customerService", fallbackMethod = "getAllCustomers")
+        @CircuitBreaker(name = "category", fallbackMethod = "getAllCustomers")
         List<Mescategories> allCustomers();
 
         default Mescategories getDefaultCustomer(Long id, Exception exception){

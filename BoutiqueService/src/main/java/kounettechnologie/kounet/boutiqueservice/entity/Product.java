@@ -1,6 +1,7 @@
 package kounettechnologie.kounet.boutiqueservice.entity;
 
 import jakarta.persistence.*;
+import kounettechnologie.kounet.boutiqueservice.Model.Mescategories;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,8 +18,7 @@ public class Product {
     private String description;
     private Double price;
     private Integer quantity;
-
-    @ManyToOne
+    @Transient
     private Mescategories category;
 }
 
