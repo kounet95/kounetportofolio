@@ -26,6 +26,10 @@ spring:
           uri: http://localhost:8086/
           predicates:
             - Path=/blog/**
+        - id: r7
+          uri: http://localhost:8087/
+          predicates:
+            - Path=/blog/**
   application:
     name: gateway-service
 server:
