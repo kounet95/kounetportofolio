@@ -5,27 +5,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.1</version>
+        <version>3.3.2</version> <!-- Utilisez une version stable de Spring Boot compatible avec Java 21 -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>kounettechnologie.kounet</groupId>
-    <artifactId>getwayService</artifactId>
+    <artifactId>getwayservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>getwayService</name>
-    <description>getwayService</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+    <packaging>jar</packaging>
+    <name>getwayservice</name>
+    <description>Spring Cloud Gateway Service</description>
+
     <properties>
         <java.version>21</java.version> <!-- Spécifiez Java 21 -->
     </properties>
