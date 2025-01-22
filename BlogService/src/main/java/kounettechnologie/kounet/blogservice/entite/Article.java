@@ -2,6 +2,7 @@ package kounettechnologie.kounet.blogservice.entite;
 
 
 import jakarta.persistence.*;
+import kounettechnologie.kounet.blogservice.Model.Mescategories;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ public class Article {
     private String content;
 
   @Transient
-    private Locale.Category category;
+    private Mescategories category;
 
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
     private List<Comment> comments;

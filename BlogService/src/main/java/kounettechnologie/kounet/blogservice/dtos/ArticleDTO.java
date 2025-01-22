@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArticleDTO {
-    private Long id;
+
     private String title;
     private String content;
     private String author;

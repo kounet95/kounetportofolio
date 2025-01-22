@@ -1,26 +1,20 @@
 package kounettechnologie.kounet.actuservice.entity;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.*;
 
-import java.time.LocalDate;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 
 @Getter
 @Setter @ToString
-@NoArgsConstructor @AllArgsConstructor @Builder
+@NoArgsConstructor @AllArgsConstructor @SuperBuilder
 @Entity
-public class Announcement {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@DiscriminatorValue("ANNONCE")
+public class Announcement extends Item {
 
     private String message;
-
-    private LocalDate announcementDate;
-    private String tag;
     private Boolean isHighlighted;
 }
 

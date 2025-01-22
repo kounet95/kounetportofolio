@@ -29,7 +29,9 @@ public class TagService {
     public TagDTO updateTag(Long id, TagDTORequest tagDTORequest) {
         Tag existingTag = tagRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Tag not found with id: " + id));
-        existingTag.setName(tagDTORequest.getName());
+
+        existingTag.setKeys(tagDTORequest.getKeys());
+
         Tag updatedTag = tagRepository.save(existingTag);
         return tagMapper.toTagDTO(updatedTag);
     }

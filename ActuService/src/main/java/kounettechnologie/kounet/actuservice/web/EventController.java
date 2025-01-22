@@ -41,7 +41,7 @@ public class EventController {
         return ResponseEntity.ok(event);
     }
 
-    @GetMapping
+    @GetMapping("Mesevent")
     public ResponseEntity<List<EventDTO>> getAllEvents() {
         List<EventDTO> events = eventService.getAllEvents();
         return ResponseEntity.ok(events);

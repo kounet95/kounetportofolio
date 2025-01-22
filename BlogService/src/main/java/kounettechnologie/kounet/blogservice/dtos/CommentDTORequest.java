@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommentDTO {
-
+public class CommentDTORequest {
+    private Long id;
     private String content;
     private String author;
     private String createdAt;

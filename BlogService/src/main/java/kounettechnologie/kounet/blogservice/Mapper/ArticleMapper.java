@@ -16,7 +16,7 @@ public class ArticleMapper {
                 article.isPublished(),
                 article.getCreatedAt(),
                 article.getUpdatedAt(),
-                article.getCategory(),
+                article.getCategory().getId(),
                 article.getComments().stream().map(comment -> comment.getId()).toList()
         );
     }

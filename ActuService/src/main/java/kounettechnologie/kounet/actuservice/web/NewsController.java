@@ -41,7 +41,7 @@ public class NewsController {
         return ResponseEntity.ok(news);
     }
 
-    @GetMapping
+    @GetMapping("mesnews")
     public ResponseEntity<List<NewsDTO>> getAllNews() {
         List<NewsDTO> newsList = newsService.getAllNews();
         return ResponseEntity.ok(newsList);
