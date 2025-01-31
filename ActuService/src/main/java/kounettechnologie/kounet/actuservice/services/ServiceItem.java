@@ -63,8 +63,8 @@ public class ServiceItem {
         // Conversion simple ; à personnaliser selon vos besoins
         return ItemDTO.builder()
                 .id(item.getId())
-                .type(item.getClass().getSimpleName())
-                .name(item.getName())
+                .itemType(item.getItemType())
+                .title(item.getTitle())
                 .createdAt(item.getCreatedAt())
                 .build();
     }

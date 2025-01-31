@@ -56,12 +56,12 @@ public class ActuServiceApplication {
             Event event1 = Event.builder()
                     .title("Conférence sur l'Innovation")
                     .description("Une conférence sur les dernières tendances en matière d'innovation technologique.")
-                    .startDate(LocalDate.of(2025, 2, 10))
-                    .endDate(LocalDate.of(2025, 2, 12))
+                    .startDate(java.sql.Date.valueOf(LocalDate.of(2025, 2, 10)))  // Conversion de LocalDate pour compatibilité avec Date
+                    .endDate(java.sql.Date.valueOf(LocalDate.of(2025, 2, 12)))    // Conversion de LocalDate pour compatibilité avec Date
                     .location("Paris, France")
                     .isOnline(false)
                     .registrationLink("https://example.com/register")
-                    .bannerUrl("https://example.com/images/event_banner.jpg")
+                   // .bannerUrl("https://example.com/images/event_banner.jpg")
                     .tags(List.of(tag1, tag3))
                     .build();
 

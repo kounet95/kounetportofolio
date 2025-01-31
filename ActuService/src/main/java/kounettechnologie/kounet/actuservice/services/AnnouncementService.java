@@ -8,6 +8,8 @@ import kounettechnologie.kounet.actuservice.repos.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,7 +44,9 @@ public class AnnouncementService {
                 .orElseThrow(() -> new RuntimeException("Announcement not found with id: " + id));
         existingAnnouncement.setMessage(announcementDTORequest.getMessage());
         existingAnnouncement.setIsHighlighted(announcementDTORequest.getIsHighlighted());
+        existingAnnouncement.setUpdatedAt(new Date());
         Announcement updatedAnnouncement = itemRepository.save(existingAnnouncement);
+
         return announcementMapper.toAnnouncementDTO(updatedAnnouncement);
     }
 

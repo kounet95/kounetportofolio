@@ -13,13 +13,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EventDTORequest {
-    private Long id;
     private String name;
     private String description;
     private Date startDate;
     private Date endDate;
     private String location;
     private Boolean isOnline;
+    private Boolean isHighlighted;
     private String registrationLink;
     private List<Tag> tags;
     private String mediaUrls;

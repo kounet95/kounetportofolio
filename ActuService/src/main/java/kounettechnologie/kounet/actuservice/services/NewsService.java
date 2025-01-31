@@ -1,6 +1,7 @@
 package kounettechnologie.kounet.actuservice.services;
 
 import kounettechnologie.kounet.actuservice.dtos.NewsDTO;
+import kounettechnologie.kounet.actuservice.dtos.NewsDTOResquest;
 import kounettechnologie.kounet.actuservice.entity.News;
 import kounettechnologie.kounet.actuservice.mappers.NewsMapper;
 import kounettechnologie.kounet.actuservice.repos.ItemRepository;
@@ -24,7 +25,7 @@ public class NewsService {
      * @param newsDTORequest Les données pour créer une actualité.
      * @return L'actualité créée sous forme de DTO.
      */
-    public NewsDTO createNews(NewsDTORequest newsDTORequest) {
+    public NewsDTO createNews(NewsDTOResquest newsDTORequest) {
         News news = newsMapper.fromNewsDTORequest(newsDTORequest);
         News savedNews = itemRepository.save(news);
         return newsMapper.toNewsDTO(savedNews);
@@ -36,7 +37,7 @@ public class NewsService {
      * @param newsDTORequest Les nouvelles données de l'actualité.
      * @return L'actualité mise à jour sous forme de DTO.
      */
-    public NewsDTO updateNews(Long id, NewsDTORequest newsDTORequest) {
+    public NewsDTO updateNews(Long id, NewsDTOResquest newsDTORequest) {
         News existingNews = (News) itemRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("News not found with id: " + id));
         existingNews.setTitle(newsDTORequest.getTitle());

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public abstract class Item {
     private Date createdAt;
     private Date updatedAt;
     private String title;
+
     @ManyToMany
 @JoinTable(name = "Item_Tag",joinColumns = @JoinColumn(name = "idItem"),
         inverseJoinColumns =@JoinColumn(name="idTag") )

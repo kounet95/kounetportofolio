@@ -31,7 +31,7 @@ public class Event extends Item{
     private Boolean isOnline;
 
     private String registrationLink;
-
+    private Boolean isHighlighted;
     private String mediaUrls;
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     private List<Media> media;

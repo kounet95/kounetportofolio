@@ -16,7 +16,9 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 public class ItemDTO {
+        private Long id;
         private Enum<ItemType> itemType;
+        private String name;
         private Date createdAt;
         private Date updatedAt;
         private String title;

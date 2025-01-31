@@ -3,11 +3,11 @@ package kounettechnologie.kounet.actuservice.services;
 import kounettechnologie.kounet.actuservice.dtos.EventDTO;
 import kounettechnologie.kounet.actuservice.dtos.EventDTORequest;
 import kounettechnologie.kounet.actuservice.entity.Event;
+import kounettechnologie.kounet.actuservice.entity.Item;
 import kounettechnologie.kounet.actuservice.mappers.EventMapper;
 import kounettechnologie.kounet.actuservice.repos.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +16,6 @@ public class EventService {
 
     @Autowired
     private ItemRepository eventRepository;
-
     @Autowired
     private EventMapper eventMapper;
 
@@ -38,7 +37,7 @@ public class EventService {
      * @return L'événement mis à jour sous forme de DTO.
      */
     public EventDTO updateEvent(Long id, EventDTORequest eventDTORequest) {
-        Event existingEvent = eventRepository.findById(id)
+        Event existingEvent = (Event) eventRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Event not found with id: " + id));
         existingEvent.setDescription(eventDTORequest.getDescription());
         existingEvent.setStartDate(eventDTORequest.getStartDate());
@@ -58,7 +57,7 @@ public class EventService {
      * @param id L'identifiant de l'événement à supprimer.
      */
     public void deleteEvent(Long id) {
-        Event event = eventRepository.findById(id)
+        Event event = (Event) eventRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Event not found with id: " + id));
         eventRepository.delete(event);
     }
@@ -69,7 +68,7 @@ public class EventService {
      * @return L'événement sous forme de DTO.
      */
     public EventDTO getEventById(Long id) {
-        Event event = eventRepository.findById(id)
+        Event event = (Event) eventRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Event not found with id: " + id));
         return eventMapper.toEventDTO(event);
     }
@@ -79,20 +78,22 @@ public class EventService {
      * @return Une liste de tous les événements sous forme de DTO.
      */
     public List<EventDTO> getAllEvents() {
-        List<Event> events = eventRepository.findAll();
+        List<Item> events = eventRepository.findAll();
         return events.stream()
-                .map(eventMapper::toEventDTO)
+                .filter(item -> item instanceof Event)
+                .map(item -> eventMapper.toEventDTO((Event) item))
                 .collect(Collectors.toList());
     }
 
     /**
-     * Recherche les événements en ligne.
-     * @return Une liste des événements en ligne sous forme de DTO.
+     * Recherche les événements à la une.
+     * @return Une liste des événements à la une sous forme de DTO.
      */
-    public List<EventDTO> getOnlineEvents() {
-        List<Event> onlineEvents = eventRepository.findByIsOnlineTrue();
-        return onlineEvents.stream()
-                .map(eventMapper::toEventDTO)
+    public List<EventDTO> getHighlightedEvents() {
+        List<Event> highlightedEvents = eventRepository.findByIsHighlightedTrue();
+        return highlightedEvents.stream()
+                .filter(item -> item instanceof Event)
+                .map(item -> eventMapper.toEventDTO((Event) item))
                 .collect(Collectors.toList());
     }
 

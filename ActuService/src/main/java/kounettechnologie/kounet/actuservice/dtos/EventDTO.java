@@ -16,6 +16,7 @@ public class EventDTO {
     private Date endDate;
     private String location;
     private Boolean isOnline;
+    private Boolean isHighlighted;
     private String registrationLink;
     private List<Tag> tags;
     private String mediaUrls;
