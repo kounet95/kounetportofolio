@@ -14,6 +14,7 @@
         <module name="getwayService" />
         <module name="ServiceClientService" />
         <module name="OffresSpecialesService" />
+        <module name="discoveryservice" />
         <module name="configservice" />
         <module name="BoutiqueService" />
       </profile>
@@ -45,6 +46,7 @@
       <module name="configservice" options="-parameters" />
       <module name="coursService" options="-parameters" />
       <module name="discoveryService" options="-parameters" />
+      <module name="discoveryservice" options="-parameters" />
       <module name="getwayService" options="-parameters" />
     </option>
   </component>
