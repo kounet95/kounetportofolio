@@ -1,7 +1,7 @@
 package kounettechnologie.kounet.actuservice.dtos;
 
 import jakarta.persistence.*;
-import kounettechnologie.kounet.actuservice.entity.ItemType;
+import kounettechnologie.kounet.actuservice.menu.ItemType;
 import kounettechnologie.kounet.actuservice.entity.Tag;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

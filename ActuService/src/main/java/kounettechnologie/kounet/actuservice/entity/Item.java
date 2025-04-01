@@ -1,10 +1,10 @@
 package kounettechnologie.kounet.actuservice.entity;
 
 import jakarta.persistence.*;
+import kounettechnologie.kounet.actuservice.menu.ItemType;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 

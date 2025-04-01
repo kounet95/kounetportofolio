@@ -2,25 +2,31 @@ package kounettechnologie.kounet.blogservice.entite;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.time.LocalDate;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Comment {
 
+@AllArgsConstructor
+@NoArgsConstructor @Getter
+@Setter
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String content;
-    private String author;
     private String createdAt;
+
 
     @ManyToOne
     @JoinColumn(name = "article_id")
     private Article article;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Utilisateur author;
+
+
 }
+
