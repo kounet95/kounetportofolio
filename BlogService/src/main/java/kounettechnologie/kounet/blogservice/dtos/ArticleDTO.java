@@ -11,14 +11,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArticleDTO {
-
-    private String title;
+    private Long id;
     private String content;
+    private String title;
     private String author;
-    private boolean published;
     private String createdAt;
+    private boolean published;
     private String updatedAt;
     private Long categoryId;
     private List<Long> commentIds;
-}
 
+}

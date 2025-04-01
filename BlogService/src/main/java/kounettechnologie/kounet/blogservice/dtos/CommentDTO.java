@@ -1,7 +1,5 @@
 package kounettechnologie.kounet.blogservice.dtos;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommentDTO {
-
+    private Long id;
     private String content;
-    private String author;
     private String createdAt;
+    private String author;
     private Long articleId;
 }
-

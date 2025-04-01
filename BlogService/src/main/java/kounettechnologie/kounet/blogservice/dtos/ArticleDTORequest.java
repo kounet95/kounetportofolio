@@ -1,10 +1,8 @@
 package kounettechnologie.kounet.blogservice.dtos;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data
@@ -12,13 +10,13 @@ import java.util.List;
 @NoArgsConstructor
 public class ArticleDTORequest {
     private Long id;
-    private String title;
     private String content;
+    private String title;
     private String author;
-    private boolean published;
     private String createdAt;
+    private boolean published;
     private String updatedAt;
     private Long categoryId;
     private List<Long> commentIds;
-}
 
+}

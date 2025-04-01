@@ -2,36 +2,40 @@ package kounettechnologie.kounet.blogservice.entite;
 
 
 import jakarta.persistence.*;
-import kounettechnologie.kounet.blogservice.Model.Mescategories;
+
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+import java.util.Set;
 
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Article {
 
+@AllArgsConstructor
+@NoArgsConstructor @Getter @Setter
+public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String title;
     private String content;
-
-  @Transient
-    private Mescategories category;
-
-    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
-    private List<Comment> comments;
-
-    private String author;
-    private boolean published;
+    private String title;
     private String createdAt;
+    private boolean published;
     private String updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Utilisateur author;
+
 }
