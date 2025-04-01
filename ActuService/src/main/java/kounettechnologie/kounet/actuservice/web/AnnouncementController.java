@@ -41,7 +41,7 @@ public class AnnouncementController {
         return ResponseEntity.ok(announcement);
     }
 
-    @GetMapping
+    @GetMapping("/Mesannounce")
     public ResponseEntity<List<AnnouncementDTO>> getAllAnnouncements() {
         List<AnnouncementDTO> announcements = announcementService.getAllAnnouncements();
         return ResponseEntity.ok(announcements);

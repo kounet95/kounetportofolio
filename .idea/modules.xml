@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/ActuService/ActuService.iml" filepath="$PROJECT_DIR$/ActuService/ActuService.iml" />
+>>>>>>> 533dc131cc18248d50850a28fa337e2219155041
       <module fileurl="file://$PROJECT_DIR$/.idea/kounetportofolio.iml" filepath="$PROJECT_DIR$/.idea/kounetportofolio.iml" />
     </modules>
   </component>

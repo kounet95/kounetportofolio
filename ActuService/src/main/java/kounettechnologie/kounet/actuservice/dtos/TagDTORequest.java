@@ -11,5 +11,6 @@ import lombok.NoArgsConstructor;
 public class TagDTORequest {
         private Long id;
         private String name;
+        private String keys;
 
 }

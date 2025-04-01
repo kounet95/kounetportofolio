@@ -41,7 +41,7 @@ public class MediaController {
         return ResponseEntity.ok(media);
     }
 
-    @GetMapping
+    @GetMapping("/mesmedias")
     public ResponseEntity<List<MediaDTO>> getAllMedia() {
         List<MediaDTO> mediaList = mediaService.getAllMedia();
         return ResponseEntity.ok(mediaList);

@@ -1,24 +1,26 @@
 package kounettechnologie.kounet.actuservice.dtos;
 
+import kounettechnologie.kounet.actuservice.entity.Tag;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EventDTORequest {
-    private Long id;
     private String name;
     private String description;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private Date startDate;
+    private Date endDate;
     private String location;
     private Boolean isOnline;
+    private Boolean isHighlighted;
     private String registrationLink;
-    private List<String> tags;
-    private List<String> mediaUrls;
+    private List<Tag> tags;
+    private String mediaUrls;
 }
