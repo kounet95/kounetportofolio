@@ -1,13 +1,9 @@
 package kounettechnologie.kounet.blogservice.web;
 
-import kounettechnologie.kounet.blogservice.dtos.CommentDTO;
-import kounettechnologie.kounet.blogservice.dtos.CommentDTORequest;
 import kounettechnologie.kounet.blogservice.dtos.EventDTO;
 import kounettechnologie.kounet.blogservice.dtos.EventDTORequest;
 import kounettechnologie.kounet.blogservice.exception.ResourceNotFoundException;
-import kounettechnologie.kounet.blogservice.services.CommentService;
 import kounettechnologie.kounet.blogservice.services.EventService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,40 +11,41 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/actu/events")
+@RequestMapping("/api/events")
 public class EventController {
-    @Autowired
-    private  CommentService commentService;
+    private final EventService eventService;
 
+    public EventController(EventService eventService) {
+        this.eventService = eventService;
+    }
 
-
-    @GetMapping
-    public ResponseEntity<List<CommentDTO>> getAllComments() {
-        List<CommentDTO> comments = commentService.getAllComments();
-        return ResponseEntity.ok(comments);
+    @GetMapping("all")
+    public ResponseEntity<List<EventDTO>> getAllEvents() {
+        List<EventDTO> events = eventService.getAllEvents();
+        return ResponseEntity.ok(events);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CommentDTO> getCommentById(@PathVariable Long id)  throws ResourceNotFoundException  {
-        CommentDTO comment = commentService.getCommentById(id);
-        return ResponseEntity.ok(comment);
+    public ResponseEntity<EventDTO> getEventById(@PathVariable Long id) throws ResourceNotFoundException {
+        EventDTO event = eventService.getEventById(id);
+        return ResponseEntity.ok(event);
     }
 
-    @PostMapping
-    public ResponseEntity<CommentDTO> createComment(@RequestBody CommentDTORequest commentDTORequest) {
-        CommentDTO comment = commentService.createComment(commentDTORequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(comment);
+    @PostMapping("add")
+    public ResponseEntity<EventDTO> createEvent(@RequestBody EventDTORequest eventDTORequest) {
+        EventDTO event = eventService.createEvent(eventDTORequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(event);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CommentDTO> updateComment(@PathVariable Long id, @RequestBody CommentDTORequest commentDTORequest)  throws ResourceNotFoundException  {
-        CommentDTO comment = commentService.updateComment(id, commentDTORequest);
-        return ResponseEntity.ok(comment);
+    public ResponseEntity<EventDTO> updateEvent(@PathVariable Long id, @RequestBody EventDTORequest eventDTORequest)  throws ResourceNotFoundException  {
+        EventDTO event = eventService.updateEvent(id, eventDTORequest);
+        return ResponseEntity.ok(event);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteComment(@PathVariable Long id) throws ResourceNotFoundException {
-        commentService.deleteComment(id);
+    public ResponseEntity<Void> deleteEvent(@PathVariable Long id)  throws ResourceNotFoundException {
+        eventService.deleteEvent(id);
         return ResponseEntity.noContent().build();
     }
 }
