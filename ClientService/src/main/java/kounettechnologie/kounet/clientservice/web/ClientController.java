@@ -18,7 +18,7 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @PostMapping
+    @PostMapping("add")
     public ResponseEntity<ClientDTO> createClient(@RequestBody ClientDTO clientDTO) {
         ClientDTO createdClient = clientService.createClient(clientDTO);
         return ResponseEntity.ok(createdClient);

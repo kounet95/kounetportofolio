@@ -5,9 +5,11 @@ import kounettechnologie.kounet.blogservice.repos.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableFeignClients
 public class BlogServiceApplication {
 
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class BlogServiceApplication {
 
     @Bean
     CommandLineRunner commandLineRunner(ArticleRepository articleRepository, CommentRepository commentRepository,
-                                        CategoryRepository categoryRepository, UtilisateurRepository utilisateurRepository,
+                                        CategoryRepository categoryRepository, UtilisateurRepository utilisateurRepository, UserClient userClient,
                                         MediaRepository mediaRepository) {
         return args -> {
             // Create categories
