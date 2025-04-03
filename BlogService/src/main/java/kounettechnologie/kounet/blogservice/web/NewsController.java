@@ -22,7 +22,7 @@ public class NewsController {
         this.newsService = newsService;
     }
 
-    @GetMapping
+    @GetMapping("all")
     public ResponseEntity<List<NewsDTO>> getAllNews() {
         List<NewsDTO> news = newsService.getAllNews();
         return ResponseEntity.ok(news);
@@ -34,7 +34,7 @@ public class NewsController {
         return ResponseEntity.ok(news);
     }
 
-    @PostMapping
+    @PostMapping("add")
     public ResponseEntity<NewsDTO> createNews(@RequestBody NewsDTORequest newsDTORequest) {
         NewsDTO news = newsService.createNews(newsDTORequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(news);

@@ -23,7 +23,7 @@ public class TagController {
         this.tagService = tagService;
     }
 
-    @GetMapping
+    @GetMapping("all")
     public ResponseEntity<List<TagDTO>> getAllTags() throws ResourceNotFoundException {
         List<TagDTO> tags = tagService.getAllTags();
         return ResponseEntity.ok(tags);
@@ -35,7 +35,7 @@ public class TagController {
         return ResponseEntity.ok(tag);
     }
 
-    @PostMapping
+    @PostMapping("add")
     public ResponseEntity<TagDTO> createTag(@RequestBody TagDTORequest tagDTORequest)throws ResourceNotFoundException {
         TagDTO tag = tagService.createTag(tagDTORequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(tag);

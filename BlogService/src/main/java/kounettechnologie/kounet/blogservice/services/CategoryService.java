@@ -41,7 +41,7 @@ public class CategoryService {
     public CategoryDTO updateCategory(Long id, CategoryDTORequest categoryDTORequest)throws ResourceNotFoundException {
         Category category = categoryRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Category not found"));
         category.setName(categoryDTORequest.getName());
-        // Update other fields as necessary
+
         category = categoryRepository.save(category);
         return blogMapper.toCategoryDTO(category);
     }

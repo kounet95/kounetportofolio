@@ -19,8 +19,7 @@ public class MediaController {
     public MediaController(MediaService mediaService) {
         this.mediaService = mediaService;
     }
-
-    @GetMapping
+    @GetMapping("all")
     public ResponseEntity<List<MediaDTO>> getAllMedia() {
         List<MediaDTO> media = mediaService.getAllMedia();
         return ResponseEntity.ok(media);
@@ -32,7 +31,7 @@ public class MediaController {
         return ResponseEntity.ok(media);
     }
 
-    @PostMapping
+    @PostMapping("add")
     public ResponseEntity<MediaDTO> createMedia(@RequestBody MediaDTO mediaDTO) throws ResourceNotFoundException{
         MediaDTO media = mediaService.createMedia(mediaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(media);

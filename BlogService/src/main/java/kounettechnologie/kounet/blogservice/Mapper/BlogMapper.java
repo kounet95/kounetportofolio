@@ -17,6 +17,7 @@ public class BlogMapper {
         this.modelMapper = modelMapper;
     }
 
+
     public ArticleDTO toArticleDTO(Article article) {
         ArticleDTO articleDTO = modelMapper.map(article, ArticleDTO.class);
         articleDTO.setAuthor(article.getAuthor().getUsername()); // Mapping author
@@ -84,6 +85,19 @@ public class BlogMapper {
         Category category = modelMapper.map(categoryDTORequest, Category.class);
         // Additional mappings if necessary
         return category;
+    }
+
+    public UtilisateurDTO toUtilisateurDTO(Utilisateur utilisateur) {
+        UtilisateurDTO utilisateurDTO = modelMapper.map(utilisateur, UtilisateurDTO.class);
+        utilisateurDTO.setCommentIds(utilisateur.getCommentList().stream().map(Comment::getId).collect(Collectors.toList())); // Mapping des IDs des commentaires
+        utilisateurDTO.setArticleIds(utilisateur.getArticleList().stream().map(Article::getId).collect(Collectors.toList())); // Mapping des IDs des articles
+        return utilisateurDTO;
+    }
+
+    public Utilisateur toUtilisateurEntity(UserDTO userDTO) {
+        Utilisateur utilisateur = modelMapper.map(userDTO, Utilisateur.class);
+        // Additional mappings if necessary
+        return utilisateur;
     }
 
     public List<ArticleDTO> toArticleDTOList(List<Article> articles) {

@@ -12,7 +12,7 @@ public class ArticleDTORequest {
     private Long id;
     private String content;
     private String title;
-    private String author;
+    private Long authorId;
     private String createdAt;
     private boolean published;
     private String updatedAt;
