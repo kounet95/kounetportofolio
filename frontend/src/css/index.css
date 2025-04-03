@@ -29,3 +29,128 @@
   font-weight: bold;
 }
 
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color:  #212529;
+  /*background-color: #212529;*/
+  position: relative;
+}
+
+.page-title .heading {
+  border-top: 1px solid color-mix(in srgb,  #212529, transparent 90%);
+}
+
+.page-title .heading h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.page-title nav {
+  /*background-color: color-mix(in srgb, #212529, transparent 95%);*/
+  padding: 20px 0;
+}
+
+.page-title nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.page-title nav ol li+li {
+  padding-left: 10px;
+}
+
+.page-title nav ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, #212529, transparent 70%);
+}
+
+
+
+/*--------------------------------------------------------------
+# Recent Posts Section
+--------------------------------------------------------------*/
+.recent-posts .post-img {
+  max-height: 240px;
+  margin: -30px -30px 15px -30px;
+  overflow: hidden;
+}
+
+/*--------------------------------------------------------------
+# Blog Posts Section
+--------------------------------------------------------------*/
+ .post-category {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.blog-posts .title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.blog-posts .title a {
+  color: #32353a;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.blog-posts .title a:hover {
+  color: #e84545;
+
+}
+
+.recent-posts .title a {
+  color: #32353a;
+  transition: 0.3s;
+  text-decoration: none;
+
+}
+
+.recent-posts .title a:hover {
+  color: #e84545;
+}
+
+
+.blog-details .post-img {
+  margin: -30px -30px 20px -30px;
+  overflow: hidden;
+}
+
+
+.blog-posts .post-author-img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.blog-posts .post-author {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.recent-posts .post-author-img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.recent-posts .post-author {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.blog-posts .post-date {
+  font-size: 14px;
+  color: color-mix(in srgb, #212529, transparent 40%);
+  margin-bottom: 0;
+}
