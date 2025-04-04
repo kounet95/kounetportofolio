@@ -3,34 +3,36 @@ spring:
     gateway:
       routes:
         - id: r1
-          uri: http://localhost:8082/
+          uri: http://localhost:8082
           predicates:
             - Path=/api/clients/**
         - id: r2
-          uri: http://localhost:8081/
+          uri: http://localhost:8081
           predicates:
             - Path=/actu/**
         - id: r3
-          uri: http://localhost:8083/
+          uri: http://localhost:8083
           predicates:
             - Path=/cours/**
         - id: r4
-          uri: http://localhost:8084/
+          uri: http://localhost:8084
           predicates:
             - Path=/categorie/**
         - id: r5
-          uri: http://localhost:8085/
+          uri: http://localhost:8085
           predicates:
             - Path=/boutique/**
         - id: r6
-          uri: http://localhost:8086/
+          uri: http://localhost:8086
           predicates:
-            - Path=/blog/**
+            - Path=/api/blog/articles/**
         - id: r7
-          uri: http://localhost:8087/
+          uri: http://localhost:8087
           predicates:
             - Path=/blog/**
-  application:
-    name: gateway-service
+
+application:
+  name: gateway-service
+
 server:
   port: 8888

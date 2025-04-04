@@ -7,11 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discoveryService" />
-        <module name="BlogService" />
         <module name="coursService" />
         <module name="ActuService" />
-        <module name="Category" />
-        <module name="ClientService" />
+        <module name="blogservice" />
         <module name="getwayService" />
         <module name="OffresSpecialesService" />
         <module name="discoveryservice" />
@@ -22,19 +20,21 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backKounettechnologie" target="21" />
+      <module name="Category" target="21" />
+      <module name="clientservices" target="21" />
       <module name="ServiceClientService" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ActuService" options="-parameters" />
-      <module name="BlogService" options="-parameters" />
       <module name="BoutiqueService" options="-parameters" />
       <module name="Category" options="-parameters" />
-      <module name="ClientService" options="-parameters" />
       <module name="OffresSpecialesService" options="-parameters" />
       <module name="ServiceClientService" options="-parameters" />
       <module name="backKounettechnologie" options="-parameters" />
+      <module name="blogservice" options="-parameters" />
+      <module name="clientservices" options="-parameters" />
       <module name="configservice" options="-parameters" />
       <module name="coursService" options="-parameters" />
       <module name="discoveryService" options="-parameters" />
