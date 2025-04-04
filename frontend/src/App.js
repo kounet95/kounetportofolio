@@ -32,8 +32,10 @@ export default function Root() {
         <>
             <NavBarComponent />
             <BrowserRouter>
-                <App/>
+                <main className="main">
+                    <App/>
+                </main>
             </BrowserRouter>
         </>
-    );
+);
 }
