@@ -40,18 +40,18 @@ const BlogPage = () => {
                                 <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid"/>
                             </div>
 
-                            <p class="post-category">Entertainment</p>
+                            <p class="post-category">{article.title}</p>
 
                             <h2 class="title">
-                                <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
+                                <a href={`/blog/${article.id}`}>{article.content}</a>
                             </h2>
 
                             <div class="d-flex align-items-center">
                                 <img src="../../public/assets/img/blog/blog-1.jpg" alt="" class="img-fluid post-author-img flex-shrink-0"/>
                                     <div class="post-meta">
-                                        <p class="post-author">Mika Lendon</p>
+                                        <p class="post-author">{article.author}</p>
                                         <p class="post-date">
-                                            <time datetime="2022-01-01">Feb 14, 2022</time>
+                                            <time datetime="2022-01-01">{article.createdAt}</time>
                                         </p>
                                     </div>
                             </div>

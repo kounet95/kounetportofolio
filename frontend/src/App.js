@@ -8,8 +8,9 @@ import NavBarComponent from "./components/NavBarComponent";
 
 
 
-import {BrowserRouter, useRoutes} from "react-router-dom";
+import {BrowserRouter, useParams, useRoutes} from "react-router-dom";
 import React from "react";
+import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 function App() {
     const routes = useRoutes([
@@ -19,6 +20,7 @@ function App() {
         { path: '/services', element: <ServicePage /> },
         { path: '/team', element: <TeamPage /> },
         { path: '/blog', element: <BlogPage /> },
+        { path: '/blog/:id', element: <BlogDetailWithId /> },
 
 
     ]);
@@ -26,7 +28,12 @@ function App() {
     return routes;
 }
 
-
+const BlogDetailWithId = () => {
+    const { id } = useParams()
+    return (
+        <BlogDetailsPage id={id}/>
+    )
+}
 export default function Root() {
     return (
         <>

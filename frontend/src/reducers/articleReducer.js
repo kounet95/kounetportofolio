@@ -1,14 +1,17 @@
 // reducers/articlesReducer.js
-import { FETCH_ARTICLES, CREATE_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE, SET_LOADING, SET_ERROR } from '../actions/articleActions';
+import { FETCH_ARTICLES, CREATE_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE, SET_LOADING, SET_ERROR, FETCH_ARTICLE } from '../actions/articleActions';
 
 const initialState = {
     articles: [],
+    article: null, 
     loading: false,
     error: null
 };
 
 const articlesReducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCH_ARTICLE:
+            return { ...state, article: action.payload };
         case FETCH_ARTICLES:
             return { ...state, articles: action.payload };
         case CREATE_ARTICLE:
