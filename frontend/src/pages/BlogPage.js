@@ -33,24 +33,24 @@ const BlogPage = () => {
                   
                 {articles.map(article => (
 
-                    <div  key={article.id} class="col-lg-4">
+                    <div  key={article.id} className="col-lg-4">
                         <article>
 
-                            <div class="post-img">
-                                <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid"/>
+                            <div className="post-img">
+                                <img src="assets/img/blog/blog-6.jpg" alt="" className="img-fluid"/>
                             </div>
 
-                            <p class="post-category">{article.title}</p>
+                            <p className="post-category">{article.title}</p>
 
-                            <h2 class="title">
+                            <h2 className="title">
                                 <a href={`/blog/${article.id}`}>{article.content}</a>
                             </h2>
 
-                            <div class="d-flex align-items-center">
-                                <img src="../../public/assets/img/blog/blog-1.jpg" alt="" class="img-fluid post-author-img flex-shrink-0"/>
-                                    <div class="post-meta">
-                                        <p class="post-author">{article.author}</p>
-                                        <p class="post-date">
+                            <div className="d-flex align-items-center">
+                                <img src="assets/img/blog/blog-1.jpg" alt="" className="img-fluid post-author-img flex-shrink-0"/>
+                                    <div className="post-meta">
+                                        <p className="post-author">{article.author}</p>
+                                        <p className="post-date">
                                             <time datetime="2022-01-01">{article.createdAt}</time>
                                         </p>
                                     </div>

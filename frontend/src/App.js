@@ -11,6 +11,8 @@ import NavBarComponent from "./components/NavBarComponent";
 import {BrowserRouter, useParams, useRoutes} from "react-router-dom";
 import React from "react";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
+import BlogFormPage from "./pages/BlogFormPage";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
     const routes = useRoutes([
@@ -21,6 +23,8 @@ function App() {
         { path: '/team', element: <TeamPage /> },
         { path: '/blog', element: <BlogPage /> },
         { path: '/blog/:id', element: <BlogDetailWithId /> },
+        { path: '/blog/new', element: <BlogFormPage /> },
+        { path: '/signin', element: <SignInPage /> },
 
 
     ]);
