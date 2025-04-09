@@ -13,6 +13,8 @@ import React from "react";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
 import BlogFormPage from "./pages/BlogFormPage";
 import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 function App() {
     const routes = useRoutes([
@@ -25,6 +27,9 @@ function App() {
         { path: '/blog/:id', element: <BlogDetailWithId /> },
         { path: '/blog/new', element: <BlogFormPage /> },
         { path: '/signin', element: <SignInPage /> },
+        { path: '/signup', element: <SignUpPage /> },
+        { path: '/forgotten', element: <ForgotPasswordPage /> },
+
 
 
     ]);

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles } from '../actions/articleActions';
+import HeaderComponent from '../components/HeaderComponent';
 
 const BlogPage = () => {
     const dispatch = useDispatch();
@@ -10,21 +11,19 @@ const BlogPage = () => {
     }, [dispatch]);
     return (
         <>
-            <div className="page-title">
-                <div className="heading">
+           
+           <div className="page-title" data-aos="fade">
+                <HeaderComponent title="Blog" />
+                <nav className="breadcrumbs">
                     <div className="container">
-                        <div className="row d-flex justify-content-center text-center">
-                            <div className="col-lg-8">
-                                <h1>Blog</h1>
-                                <p className="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo
-                                    odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus
-                                    dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-                            </div>
-                        </div>
+                        <ol>
+                        <li><a href="/">Home</a></li>
+                        <li className="current">Blog</li>
+                        </ol>
                     </div>
-                </div>
-
+                </nav>
             </div>
+
             <section id="blog-posts" className="blog-posts section ">
 
             <div className="container ">

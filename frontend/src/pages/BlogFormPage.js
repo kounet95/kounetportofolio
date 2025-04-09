@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createArticle } from '../actions/articleActions';
+import HeaderComponent from '../components/HeaderComponent';
 
 const BlogFormPage = () => {
     const dispatch = useDispatch();
@@ -18,23 +19,15 @@ const BlogFormPage = () => {
     return (
         <>
         <div className="page-title" data-aos="fade">
-            <div className="heading">
-            <div className="container">
-                <div className="row d-flex justify-content-center text-center">
-                <div className="col-lg-8">
-                    <h1> Nouvel article</h1>
-                </div>
-                </div>
-            </div>
-            </div>
+            <HeaderComponent title = "Nouvel article"/>
             <nav className="breadcrumbs">
-            <div className="container">
-                <ol>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li className="current">Nouvel article</li>
-                </ol>
-            </div>
+                <div className="container">
+                    <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li className="current">Nouvel article</li>
+                    </ol>
+                </div>
             </nav>
         </div>
         <div className="container">

@@ -2,31 +2,50 @@ import React from 'react';
 
 const NavBarComponent = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-secondary ">
-            <div className="container-fluid d-flex justify-content-evenly mainNav opacity-50 dropdown">
-                <a className="navbar-brand " href="/">Accueil</a>
-                <a className="navbar-brand" href="/services">Services</a>
-                <a className="navbar-brand" href="/team">Equipe</a>
-                <a className="navbar-brand dropbtn " href="/blog">Blog</a>
-                <div className="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="/blog/new">nouveau</a>
-                    <a href="#">Link 3</a>
-                </div>
-                <a className="navbar-brand" href="/pricing">Pricing</a>
-                <a className="navbar-brand" href="/contact">Contact</a>
-                <a className="navbar-brand" href="/signin">Login</a>
+        <nav id="navmenu" className="navmenu">
+        <ul>
+          <li><a href="/" className="active">Home</a></li>
+          <li className="dropdown"><a href="/services"><span>Services</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/services/new">New</a></li>
+              <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                 
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+            
+            </ul>
+          </li>  
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/team">Team</a></li>
 
-
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-
-            </div>
-        </nav>
+          <li className="dropdown"><a href="/blog"><span>Blog</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/blog/new">New</a></li>
+              <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                 
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+            
+            </ul>
+          </li>
+          <li><a href="/contact">Contact</a></li>
+          <li className="dropdown"><span>Sign in</span> <i className="bi bi-chevron-down toggle-dropdown"></i>
+            <ul>
+              <li><a href="/signin">Sign in</a></li>
+              <li><a href="/signup">Sign up</a></li>            
+            </ul>
+          </li>  
+        </ul>
+        <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
     );
 };
 

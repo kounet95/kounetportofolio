@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticle } from '../actions/articleActions';
 import { useParams } from 'react-router-dom';
+import CommentFormComponent from '../components/CommentFormComponent';
+import HeaderComponent from '../components/HeaderComponent';
 
 
 const BlogDetailsPage = () => {
@@ -25,15 +27,7 @@ const BlogDetailsPage = () => {
     return (
         <>
         <div className="page-title" data-aos="fade">
-            <div className="heading">
-            <div className="container">
-                <div className="row d-flex justify-content-center text-center">
-                <div className="col-lg-8">
-                    <h1> Parlons-en</h1>
-                </div>
-                </div>
-            </div>
-            </div>
+            <HeaderComponent title="Parlons-en!"/>
             <nav className="breadcrumbs">
             <div className="container">
                 <ol>
@@ -220,40 +214,7 @@ const BlogDetailsPage = () => {
              </section>
    
             
-             <section id="comment-form" className="comment-form section">
-               <div className="container">
-   
-                 <form action="">
-   
-                   <h4>Post Comment</h4>
-                   <p>Your email address will not be published. Required fields are marked * </p>
-                   <div className="row">
-                     <div className="col-md-6 form-group">
-                       <input name="name" type="text" className="form-control" placeholder="Your Name*"/>
-                     </div>
-                     <div className="col-md-6 form-group">
-                       <input name="email" type="text" className="form-control" placeholder="Your Email*"/>
-                     </div>
-                   </div>
-                   <div className="row">
-                     <div className="col form-group">
-                       <input name="website" type="text" className="form-control" placeholder="Your Website"/>
-                     </div>
-                   </div>
-                   <div className="row">
-                     <div className="col form-group">
-                       <textarea name="comment" className="form-control" placeholder="Your Comment*"></textarea>
-                     </div>
-                   </div>
-   
-                   <div className="text-center">
-                     <button type="submit" className="btn btn-primary">Post Comment</button>
-                   </div>
-   
-                 </form>
-   
-               </div>
-             </section>
+           <CommentFormComponent />
    
            </div>
    
