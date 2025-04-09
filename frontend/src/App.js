@@ -30,8 +30,6 @@ function App() {
         { path: '/signup', element: <SignUpPage /> },
         { path: '/forgotten', element: <ForgotPasswordPage /> },
 
-
-
     ]);
 
     return routes;
