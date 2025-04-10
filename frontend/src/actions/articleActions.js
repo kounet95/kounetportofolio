@@ -17,12 +17,13 @@ export const SET_ERROR = 'SET_ERROR';
 
 // Actions
 export const fetchArticles = () => async (dispatch) => {
-    dispatch({ type: SET_LOADING, payload: true });
     try {
+        dispatch({ type: SET_LOADING, payload: true });
         const response = await axios.get(`${API_URL}/all`);
         dispatch({ type: FETCH_ARTICLES, payload: response.data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
+        console.log(error.message);
     } finally {
         dispatch({ type: SET_LOADING, payload: false });
     }
@@ -33,6 +34,7 @@ export const createArticle = (articleData) => async (dispatch) => {
         const response = await axios.post(API_URL, articleData);
         dispatch({ type: CREATE_ARTICLE, payload: response.data });
     } catch (error) {
+        console.log(error.message);
         dispatch({ type: SET_ERROR, payload: error.message });
     }
 };

@@ -45,16 +45,18 @@ const BlogPage = () => {
                                 <a href={`/blog/${article.id}`}>{article.content}</a>
                             </h2>
 
-                            <div className="d-flex align-items-center">
-                                <img src="assets/img/blog/blog-1.jpg" alt="" className="img-fluid post-author-img flex-shrink-0"/>
+                            <div className="d-flex justify-content-evenly ">
+                                    <img src="assets/img/blog/blog-1.jpg" alt="" className="img-fluid post-author-img flex-shrink-0"/>
                                     <div className="post-meta">
                                         <p className="post-author">{article.author}</p>
                                         <p className="post-date">
                                             <time datetime="2022-01-01">{article.createdAt}</time>
                                         </p>
                                     </div>
+                                    <a><span className='text-info '><i class="fa-solid fa-user-pen"></i></span></a>
+                                    <a><span className='text-danger '><i class="fa-solid fa-trash"></i></span></a>
+                                    <i class="fa-solid fa-comments">10</i>
                             </div>
-
                         </article>
                     </div>
                 ))}

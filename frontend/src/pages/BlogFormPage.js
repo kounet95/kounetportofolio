@@ -2,19 +2,35 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createArticle } from '../actions/articleActions';
+
 import HeaderComponent from '../components/HeaderComponent';
+
 
 const BlogFormPage = () => {
     const dispatch = useDispatch();
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const [author, setAuthor] = useState('');
-
+    const [articleData , setArticleData] = useState({
+        author:'', title: '', content: '', tags: '', selectedFile : ''
+    });
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newArticle = { title, content, author };
-        dispatch(createArticle(newArticle));
+        dispatch(createArticle(articleData));
     };
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+      
+        reader.onloadend = () => {
+          setArticleData({ ...articleData, selectedFile: reader.result });
+        };
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      };
+      
+    const clear = () => {
+
+    }
 
     return (
         <>
@@ -39,17 +55,28 @@ const BlogFormPage = () => {
                                 <form onSubmit={handleSubmit}  className="form-group">
                                     <div className="form-group">
                                         <label>Title</label>
-                                        <input type="text"  className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} />
+                                        <input type="text"  className="form-control" value={articleData.title} onChange={(e) => setArticleData({...articleData,title:e.target.value})} />
                                     </div>
                                     <div className="form-group">
                                         <label>Content</label>
-                                        <textarea  className="form-control" value={content} onChange={(e) => setContent(e.target.value)} />
+                                        <textarea  className="form-control" value={articleData.content} onChange={(e) => setArticleData({...articleData,content:e.target.value})} />
+                                    </div>
+                                   
+                                    <div className="form-group">
+                                        <label>Tags</label>
+                                        <input  className="form-control" type="text" value={articleData.tags} onChange={(e) => setArticleData({...articleData, tags:e.target.value})} />
                                     </div>
                                     <div className="form-group">
-                                        <label>Author</label>
-                                        <input  className="form-control" type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+                                        <label>Image</label>
+                                        <input type="file" accept="image/*"  className="form-control"  onChange={handleFileChange} />
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Create Article</button>
+                                    <div className="form-group d-flex justify-content-evenly pt-4">
+
+                                        <button type="reset" onClick={clear} className="btn btn-secondary">Clear</button>
+                                        <button type="submit" className="btn btn-primary">Create Article</button>
+
+                                    </div>
+
                                 </form>
                             </article>
                         </div>
